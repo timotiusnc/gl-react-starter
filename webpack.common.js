@@ -21,9 +21,9 @@ module.exports = {
   },
 
   plugins: [
-    new CleanWebpackPlugin(),
-    new HtmlWebpackPlugin({
+    new CleanWebpackPlugin(), // See package.json to know why we need this
+    new HtmlWebpackPlugin({   // See package.json to know why we need this
       template: './public/index.html'
     })
-  ],
+  ]
 }

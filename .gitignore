@@ -1,2 +1,5 @@
 node_modules/
 dist/
+
+// Ignored because each machine is supposed to provide its own .env file
+.env

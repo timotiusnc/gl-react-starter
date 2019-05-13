@@ -1,17 +1,9 @@
 export function multiply(x: number, y: number): number {
-  console.log('multiply');
-  return x*y;
+  console.log("multiply");
+  return x * y;
 }
 
 export function divide(x: number, y: number): number {
-  console.log('diviiideee');
-  return x/y;
+  console.log("diviiideee");
+  return x / y;
 }
-
-// export function multiply(x, y) {
-//   return x*y;
-// }
-
-// export function divide(x, y) {
-//   return x/y;
-// }

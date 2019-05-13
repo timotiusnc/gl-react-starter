@@ -1,22 +1,19 @@
 {
   "compilerOptions": {
     // no "sourceMap". Even if sourceMap is true, the generated one from webpack is the same as if it's false
-    
     // Specify module code generation. "es6" will produce "import", "commonjs" will produce "require".
     // "es6" is required for webpack's tree-shaking feature to work (tree-shaking will not work with "require" syntax)
     "module": "es6",
-    
     "target": "es6",
     "jsx": "react",
-
     //noImplicitAny, noImplicitThis, alwaysStrict, strictBindCallApply, strictNullChecks, strictFunctionTypes, strictPropertyInitialization
     "strict": true,
-    
     "noUnusedLocals": false, //To warn us with unused imports
     "noUnusedParameters": false, //To warn us with unused parameters,
     "forceConsistentCasingInFileNames": true,
     "noImplicitReturns": true,
     "lib": [
+      "dom", // Needed so we can access "window" object
       "es2015" // A dynamic import call in ES5/ES3 requires the 'Promise' constructor.  Make sure you have a declaration for the 'Promise' constructor or include 'ES2015' in your `--lib` option.
     ]
   },
