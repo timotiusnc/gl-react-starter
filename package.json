@@ -15,7 +15,17 @@
   },
   "author": "GDP Labs",
   "license": "ISC",
+  "dependencies": {
+    "react": "16.8.6",
+    "react-dom": "16.8.6"
+  },
+  "dependenciesComments": {
+    "react": "React library",
+    "react-dom": "Render React component into DOM"
+  },
   "devDependencies": {
+    "@types/react": "^16.8.17",
+    "@types/react-dom": "16.8.4",
     "clean-webpack-plugin": "2.0.1",
     "dotenv-webpack": "1.7.0",
     "html-webpack-plugin": "3.2.0",
@@ -29,6 +39,8 @@
     "webpack-merge": "4.2.1"
   },
   "devDependenciesComments": {
+    "@types/react": "TypeScript typings for react",
+    "@types/react-dom": "TypeScript typings for react-dom",
     "clean-webpack-plugin": "Clean specific folder (usually `dist`) before building",
     "dotenv-webpack": "Read .env file and put the variables into 'process.env'",
     "html-webpack-plugin": "Generate HTML for us, completed with link to our bundles src",

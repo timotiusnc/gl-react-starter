@@ -10,8 +10,9 @@ module.exports = merge(common, {
   // Line numbers are correctly mapped since it gets mapped to the original code.
   // It yields the best quality SourceMaps for development.
   // See https://webpack.js.org/configuration/devtool/#development
-  // When there's error, it will produce error, for example
-  //  "Uncaught TypeError: Cannot read property 'xxx' of undefined at eval (index.tsx?edc7:8)"
+  // --
+  // When there's error, it will produce error, for example:
+  // "Uncaught TypeError: Cannot read property 'xxx' of undefined at eval (index.tsx?edc7:8)"
   devtool: 'eval-source-map',
 
   devServer: {
