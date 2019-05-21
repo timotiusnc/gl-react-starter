@@ -1,6 +1,7 @@
 import * as React from "react";
 import * as Loadable from "react-loadable";
 import OptionsWithoutRender = LoadableExport.OptionsWithoutRender;
+import { LoadableErrBoundary } from "../components/LoadableSamples/LoadableErrBoundary";
 
 export interface GLLoadableOpts {
   loading: React.ComponentType<any> | (() => null);
@@ -23,14 +24,15 @@ function ReactLoadable(opts: GLLoadableOpts) {
 }
 
 function ReactSuspense(opts: GLLoadableOpts) {
-  // const LoadedComp = React.lazy(() => import("../components/Test"));
   const LoadedComp = React.lazy(opts.loader);
   return class Comp extends React.Component {
     public render() {
       return (
-        <React.Suspense fallback={<opts.loading />}>
-          <LoadedComp {...this.props} />
-        </React.Suspense>
+        <LoadableErrBoundary>
+          <React.Suspense fallback={<opts.loading />}>
+            <LoadedComp {...this.props} />
+          </React.Suspense>
+        </LoadableErrBoundary>
       );
     }
   };

@@ -1,4 +1,5 @@
 import * as React from "react";
+import { Nav } from "./Nav";
 
 export interface TestProps {
   a: number;
@@ -14,7 +15,10 @@ export default class Test extends React.Component<TestProps, {}> {
   public render() {
     console.log("test", this.props);
     return (
-      <div>Test asu</div>
+      <>
+        <Nav />
+        Test component
+      </>
     );
   }
 }

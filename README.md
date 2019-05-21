@@ -49,13 +49,13 @@
 
 ---
 
+### Build
+- Production build: `npm run build`
+
 ## Deployment
 This is a CSR-only web application.
 1. environment variable
 2. [tbd]
-
-### Build
-- Production build: `npm run build`
 
 ---
 

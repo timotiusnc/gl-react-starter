@@ -1,5 +1,16 @@
 {
   // A stable, somewhat opinionated set of rules encouraged by Palantir for general TypeScript programming
   // https://github.com/palantir/tslint/tree/master/src/configs
-  "extends": ["tslint:recommended", "tslint-react"]
+  "extends": [
+    "tslint:recommended",
+    "tslint-react"
+  ],
+  // Overridden rules
+  "rules": {
+    "interface-name": [
+      // No need to prefix interface with capital I
+      true,
+      "never-prefix"
+    ],
+  }
 }
