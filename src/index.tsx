@@ -4,7 +4,7 @@
  * Author: Timotius Nugroho Chandra (timotius.n.chandra@gdplabs.id)
  * Created at: May 3rd 2019
  * -----
- * Last Modified: May 14th 2019
+ * Last Modified: May 20th 2019
  * Modified By: Timotius Nugroho Chandra (timotius.n.chandra@gdplabs.id)
  * -----
  * Copyright (c) 2019 GLAIR. All rights reserved.
@@ -15,6 +15,7 @@ declare const APP_VERSION: string;
 
 import * as React from "react";
 import * as ReactDOM from "react-dom";
+import { Root } from "./pages/Root";
 import { multiply } from "./utils/utils";
 
 const asu = (x: number): undefined | { a: number } => {
@@ -26,10 +27,10 @@ const asu = (x: number): undefined | { a: number } => {
 console.log(multiply(1, 3));
 
 // Dynamic import examples
-import("./utils/kambing").then((module) => module.kambing());
+import(/*webpackChunkName: "Utils" */"./utils/kambing").then((module) => module.kambing());
 
 if (0 === 2 - 2) {
-  import("./utils/macan").then((module) => module.macan());
+  import(/*webpackChunkName: "Utils" */"./utils/macan").then((module) => module.macan());
 }
 
 // global variable test
@@ -38,7 +39,7 @@ console.log("window version", window.APP_VERSION);
 console.log(APP_VERSION);
 
 // React render test
-ReactDOM.render(<div>asu</div>, document.getElementById("root"));
+ReactDOM.render(<Root />, document.getElementById("root"));
 
 // Deliberate runtime error to see if the output sourcemap is correct
 const retval = asu(0);

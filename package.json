@@ -17,15 +17,21 @@
   "license": "ISC",
   "dependencies": {
     "react": "16.8.6",
-    "react-dom": "16.8.6"
+    "react-dom": "16.8.6",
+    "react-loadable": "5.5.0",
+    "react-router-dom": "5.0.0"
   },
   "dependenciesComments": {
     "react": "React library",
-    "react-dom": "Render React component into DOM"
+    "react-dom": "Render React component into DOM",
+    "react-loadable": "If you can't use React Suspense (because you need SSR), you need to use this react-lodable",
+    "react-router-dom": "React de-facto library for routing (move between HTML pages)"
   },
   "devDependencies": {
     "@types/react": "^16.8.17",
     "@types/react-dom": "16.8.4",
+    "@types/react-loadable": "5.5.1",
+    "@types/react-router-dom": "4.3.3",
     "clean-webpack-plugin": "2.0.1",
     "dotenv-webpack": "1.7.0",
     "html-webpack-plugin": "3.2.0",
@@ -41,6 +47,8 @@
   "devDependenciesComments": {
     "@types/react": "TypeScript typings for react",
     "@types/react-dom": "TypeScript typings for react-dom",
+    "@types/react-loadable": "TypeScript for react-loadable",
+    "@types/react-router-dom": "TypeScript for react-router-dom",
     "clean-webpack-plugin": "Clean specific folder (usually `dist`) before building",
     "dotenv-webpack": "Read .env file and put the variables into 'process.env'",
     "html-webpack-plugin": "Generate HTML for us, completed with link to our bundles src",
