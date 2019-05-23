@@ -1,6 +1,9 @@
 import * as React from "react";
 import { multiply } from "../utils/utils";
 import { Nav } from "./Nav";
+import { ENV } from "../constants/envs";
+
+declare const NODE_ENV: string;
 
 export class Main extends React.Component<{}> {
   public render() {
@@ -16,6 +19,9 @@ export class Main extends React.Component<{}> {
   }
 
   private _asu() {
+    console.log("process.env.NODE_ENV", process.env.NODE_ENV);
+    console.log("ENV.APP_ENV", ENV.APP_ENV);
+
     // Tree-shaking test (multiply should be included because it's used, divide should not)
     // See utils/utils.ts
     console.log(multiply(1, 3));
