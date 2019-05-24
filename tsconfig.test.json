@@ -2,22 +2,8 @@
 // "ts-jest[config] (WARN) TypeScript diagnostics (customize using `[jest-config].globals.ts-jest.diagnostics` option):"
 // For explanation why we need each value in this, see tsconfig.json
 {
+  "extends": "./tsconfig",
   "compilerOptions": {
-    "sourceMap": true,
     "module": "commonjs", // The fundamental diff is this. In tsconfig.json, it's "esNext". See tsconfig.json for more details.
-    "target": "esNext",
-    "jsx": "react",
-    "strict": true,
-    "noUnusedLocals": false,
-    "noUnusedParameters": false,
-    "forceConsistentCasingInFileNames": true,
-    "noImplicitReturns": true,
-    "lib": [
-      "dom",
-      "es2015"
-    ]
-  },
-  "include": [
-    "./src/**/*"
-  ]
+  }
 }

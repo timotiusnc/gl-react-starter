@@ -36,7 +36,7 @@ function renderWithRouter(
 describe("GLLoadable", () => {
   // Normal condition, should render the loadable Test component
   const loadableOptions: GLLoadableOpts = {
-    loader: () => import("../../components/Test"),
+    loader: () => import("./Test"),
   };
 
   describe("using React Suspense", () => {
@@ -58,7 +58,7 @@ describe("GLLoadable", () => {
 
     it("should render loading component when loading is specified", () => {
       const customLoadingLoadableOptions: GLLoadableOpts = {
-        loader: () => import("../../components/Test"),
+        loader: () => import("./Test"),
         loading: () => <div>dummy</div>,
       };
 

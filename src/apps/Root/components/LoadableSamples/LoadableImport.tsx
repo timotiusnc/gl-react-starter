@@ -11,10 +11,10 @@
  * Copyright (c) 2019 GLAIR. All rights reserved.
  */
 
-import { GLLoadable, GLLoadableOpts } from "../../helpers/GLLoadable/GLLoadable";
+import { GLLoadableOpts, RootConfig } from "RootConfig";
 
 const loadableOptions: GLLoadableOpts = {
   loader: () => import(/*webpackChunkName: "AsyncTest" */"../TestRoute"),
 };
 
-export const LoadableImport = GLLoadable(loadableOptions);
+export const LoadableImport = RootConfig.loadable(loadableOptions);

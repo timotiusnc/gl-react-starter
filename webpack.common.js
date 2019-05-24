@@ -18,6 +18,9 @@ module.exports = {
   // Options to specify how modules are resolved.
   // If unspecified, when building, it will throw error "Module not found".
   resolve: {
+    alias: {
+      RootConfig: path.resolve(__dirname, 'src/apps/Root/index')
+    },
     extensions: ['.tsx', '.ts', '.js']
   },
 

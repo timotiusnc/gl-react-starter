@@ -14,11 +14,6 @@ export interface GLLoadableOpts {
   loader(): Promise<{ default: any }>; // For React Suspense
 }
 
-export function GLLoadable(opts: GLLoadableOpts): React.ComponentType {
-  return GLReactSuspense(opts);
-  // return GLReactLoadable(opts);
-}
-
 export function GLReactLoadable(opts: GLLoadableOpts) {
   const loadableOptions: OptionsWithoutRender<any> = {
     loader: opts.loader,

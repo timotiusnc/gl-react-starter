@@ -21,16 +21,12 @@
  */
 
 import * as React from "react";
-
-import { GLLoadable, GLLoadableOpts } from "../../helpers/GLLoadable/GLLoadable";
-import { LoadingSuspense } from "../../helpers/GLLoadable/Loading/LoadingSuspense";
-import Test from "../Test";
+import { GLLoadableOpts, RootConfig } from "RootConfig";
 
 const loadableOptions: GLLoadableOpts = {
   loader: () => new Promise<{ default: any }>((resolve, _) => {
     setTimeout(() => resolve({ default: () => <div>asu</div> }), 500);
   }),
-  loading: LoadingSuspense,
 };
 
-export const LoadableDirect = GLLoadable(loadableOptions);
+export const LoadableDirect = RootConfig.loadable(loadableOptions);

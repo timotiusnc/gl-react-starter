@@ -13,7 +13,7 @@
  * Copyright (c) 2019 GLAIR. All rights reserved.
  */
 
-import { GLLoadable, GLLoadableOpts } from "../../helpers/GLLoadable/GLLoadable";
+import { GLLoadableOpts, RootConfig } from "RootConfig";
 
 const loadableOptions: GLLoadableOpts = {
   loader,
@@ -27,4 +27,4 @@ function loader() {
   return new Promise<{ default: React.ComponentType<any> }>((_, reject) => reject("Error"));
 }
 
-export const LoadableReject = GLLoadable(loadableOptions);
+export const LoadableReject = RootConfig.loadable(loadableOptions);
