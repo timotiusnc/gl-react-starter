@@ -21,13 +21,15 @@
  */
 
 import * as React from "react";
+
 import { GLLoadable, GLLoadableOpts } from "../../helpers/GLLoadable";
-import { LoadingSuspense } from "./LoadingSuspense";
 import Test from "../Test";
+
+import { LoadingSuspense } from "./LoadingSuspense";
 
 const loadableOptions: GLLoadableOpts = {
   loader: () => new Promise<{ default: any }>((resolve, _) => {
-    setTimeout(() => resolve({ default: () => <Test /> }), 500)
+    setTimeout(() => resolve({ default: () => <Test /> }), 500);
   }),
   loading: LoadingSuspense,
 };

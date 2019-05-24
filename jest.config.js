@@ -10,7 +10,7 @@
  * Author: Timotius Nugroho Chandra (timotius.n.chandra@gdplabs.id)
  * Created at: May 23rd 2019
  * -----
- * Last Modified: May 23rd 2019
+ * Last Modified: May 24th 2019
  * Modified By: Timotius Nugroho Chandra (timotius.n.chandra@gdplabs.id)
  * -----
  * Copyright (c) 2019 GLAIR. All rights reserved.
@@ -21,6 +21,14 @@ module.exports = {
 
   // Which files will be used to calculate code coverage
   collectCoverageFrom: ['src/**/*.{ts,tsx}'],
+
+  // ts-jest will need its own special tsconfig file so it won't result in error
+  // See tsconfig.test.json for more details
+  globals: {
+    "ts-jest": {
+      tsConfig: 'tsconfig.test.json'
+    }
+  },
 
   // As we're using TypeScript, we need to transform it first using ts-jest.
   // Kind of like webpack loader.

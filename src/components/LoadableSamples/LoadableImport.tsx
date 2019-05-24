@@ -12,6 +12,7 @@
  */
 
 import { GLLoadable, GLLoadableOpts } from "../../helpers/GLLoadable";
+
 import { LoadingSuspense } from "./LoadingSuspense";
 
 const loadableOptions: GLLoadableOpts = {

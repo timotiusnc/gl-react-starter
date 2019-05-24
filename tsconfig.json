@@ -20,10 +20,19 @@
     "noImplicitReturns": true,
     "lib": [
       "dom", // Needed so we can access "window" object.
-      "es2015" // A dynamic import call in ES5/ES3 requires the 'Promise' constructor.  Make sure you have a declaration for the 'Promise' constructor or include 'ES2015' in your `--lib` option..
+      "es2015" // "A dynamic import call in ES5/ES3 requires the 'Promise' constructor.  Make sure you have a declaration for the 'Promise' constructor or include 'ES2015' in your `--lib` option.."
     ]
   },
   "include": [
     "./src/**/*"
+  ],
+  // Need to exclude test file because we use react-testing-library in most of them.
+  // TypeScript can't find module for react-testing-library because we use "module": "esNext", resulting in error.
+  // To fix it, we need "module": "commonjs". However, it will break tree-shaking feature.
+  // So the ultimate fix is to exclude them.
+  // However, with "module": "esNext", ts-jest will give warning, hence we still need tsconfig.test.json.
+  "exclude": [
+    "./src/**/*.test.tsx",
+    "./src/**/*.test.ts"
   ]
 }
