@@ -11,11 +11,11 @@ export interface GLLoadableOpts {
 }
 
 export function GLLoadable(opts: GLLoadableOpts): React.ComponentType {
-  return ReactSuspense(opts);
+  return GLReactSuspense(opts);
   // return ReactLoadable(opts);
 }
 
-function ReactLoadable(opts: GLLoadableOpts) {
+export function GLReactLoadable(opts: GLLoadableOpts) {
   const loadableOptions: OptionsWithoutRender<any> = {
     loader: opts.loader,
     loading: opts.loading,
@@ -24,7 +24,7 @@ function ReactLoadable(opts: GLLoadableOpts) {
   return Loadable(loadableOptions);
 }
 
-function ReactSuspense(opts: GLLoadableOpts) {
+export function GLReactSuspense(opts: GLLoadableOpts) {
   const LoadedComp = React.lazy(opts.loader);
   return class Comp extends React.Component {
     public render() {
