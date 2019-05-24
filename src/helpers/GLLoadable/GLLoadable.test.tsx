@@ -1,12 +1,22 @@
+/*
+ * GLLoadable.test.tsx
+ * Inspiration: https://www.youtube.com/watch?v=lfb5jvHq9c4
+ *
+ * Author: Timotius Nugroho Chandra (timotius.n.chandra@gdplabs.id)
+ * Created at: May 23rd 2019
+ * -----
+ * Last Modified: May 24th 2019
+ * Modified By: Timotius Nugroho Chandra (timotius.n.chandra@gdplabs.id)
+ * -----
+ * Copyright (c) 2019 GLAIR. All rights reserved.
+ */
+
 import { createMemoryHistory } from "history";
 import "jest-dom/extend-expect";
 import * as React from "react";
 import { Router } from "react-router";
 import { render, wait } from "react-testing-library";
 import "react-testing-library/cleanup-after-each";
-
-import { Loading } from "../components/LoadableSamples/Loading";
-import { LoadingSuspense } from "../components/LoadableSamples/LoadingSuspense";
 
 import { GLLoadableOpts, GLReactLoadable, GLReactSuspense } from "./GLLoadable";
 
@@ -26,8 +36,7 @@ function renderWithRouter(
 describe("GLLoadable", () => {
   // Normal condition, should render the loadable Test component
   const loadableOptions: GLLoadableOpts = {
-    loader: () => import("../components/Test"),
-    loading: LoadingSuspense,
+    loader: () => import("../../components/Test"),
   };
 
   describe("using React Suspense", () => {
@@ -35,7 +44,7 @@ describe("GLLoadable", () => {
 
     it("should render loadable component given normal condition", async () => {
       const LoadableElmt = GLLoadable(loadableOptions);
-      const { getByText } = renderWithRouter(<LoadableElmt />);
+      const { getByText } = render(<LoadableElmt />);
 
       await wait();
       expect(getByText("Test component")).toBeInTheDocument();
@@ -43,20 +52,42 @@ describe("GLLoadable", () => {
 
     it("should render loading component before rendering the loadable component", () => {
       const LoadableElmt = GLLoadable(loadableOptions);
-      const { getByText } = renderWithRouter(<LoadableElmt />);
+      const { getByText } = render(<LoadableElmt />);
       expect(getByText("Loading...")).toBeInTheDocument();
+    });
+
+    it("should render loading component when loading is specified", () => {
+      const customLoadingLoadableOptions: GLLoadableOpts = {
+        loader: () => import("../../components/Test"),
+        loading: () => <div>dummy</div>,
+      };
+
+      const LoadableElmt = GLLoadable(customLoadingLoadableOptions);
+      const { getByText } = render(<LoadableElmt />);
+      expect(getByText("dummy")).toBeInTheDocument();
     });
 
     it("should render error component if something goes wrong", async () => {
       const errLoadableOptions: GLLoadableOpts = {
         loader: () => new Promise<{ default: React.ComponentType<any> }>((_, reject) => reject("Error")),
-        loading: LoadingSuspense,
       };
       const LoadableElmt = GLLoadable(errLoadableOptions);
-      const { getByText } = renderWithRouter(<LoadableElmt />);
+      const { getByText } = render(<LoadableElmt />);
 
       await wait();
       expect(getByText(/Error/)).toBeInTheDocument();
+    });
+
+    it("should render error component when error is specified", async () => {
+      const errLoadableOptions: GLLoadableOpts = {
+        loader: () => new Promise<{ default: React.ComponentType<any> }>((_, reject) => reject("Error")),
+        error: () => <div>dummy</div>,
+      };
+      const LoadableElmt = GLLoadable(errLoadableOptions);
+      const { getByText } = render(<LoadableElmt />);
+
+      await wait();
+      expect(getByText("dummy")).toBeInTheDocument();
     });
 
     // This kind of defeat the purpose of code-splitting via asynchronously loading component.
@@ -64,7 +95,6 @@ describe("GLLoadable", () => {
     it("should render loadable component given direct component declaration", async () => {
       const directLoadableOptions: GLLoadableOpts = {
         loader: () => new Promise<{ default: any }>((resolve, _) => resolve({ default: () => <div>Direct</div> })),
-        loading: LoadingSuspense,
       };
       const LoadableElmt = GLLoadable(directLoadableOptions);
       const { getByText } = render(<LoadableElmt />);
@@ -79,7 +109,7 @@ describe("GLLoadable", () => {
 
     it("should render loadable component given normal condition", async () => {
       const LoadableElmt = GLLoadable(loadableOptions);
-      const { getByText } = renderWithRouter(<LoadableElmt />);
+      const { getByText } = render(<LoadableElmt />);
 
       await wait();
       expect(getByText("Test component")).toBeInTheDocument();
@@ -87,17 +117,16 @@ describe("GLLoadable", () => {
 
     it("should render loading component before rendering the loadable component", () => {
       const LoadableElmt = GLLoadable(loadableOptions);
-      const { getByText } = renderWithRouter(<LoadableElmt />);
-      expect(getByText("Loading...")).toBeInTheDocument();
+      render(<LoadableElmt />);
+      // As LoadingLoadable returns null, we don't check anything. Just to see if the render is successful or not
     });
 
     it("should render error component if something goes wrong", async () => {
       const errLoadableOptions: GLLoadableOpts = {
         loader: () => new Promise<{ default: React.ComponentType<any> }>((_, reject) => reject("Error")),
-        loading: Loading,
       };
       const LoadableElmt = GLLoadable(errLoadableOptions);
-      const { getByText } = renderWithRouter(<LoadableElmt />);
+      const { getByText } = render(<LoadableElmt />);
 
       await wait();
       expect(getByText(/Error/)).toBeInTheDocument();

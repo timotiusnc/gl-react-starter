@@ -2,7 +2,7 @@
  * LoadableErrBoundary.tsx
  * React component that will catch error.
  * This component will not render the error component itself.
- * The rendered erro component is in LoadableError.
+ * The rendered error component is in "error" props.
  *
  * Author: Timotius Nugroho Chandra (timotius.n.chandra@gdplabs.id)
  * Created at: May 21st 2019
@@ -15,13 +15,15 @@
 
 import * as React from "react";
 
-import { LoadableError } from "./LoadableError";
+interface ErrorProps {
+  error: React.ReactNode;
+}
 
 interface ErrorState {
   hasError: boolean;
 }
 
-export class LoadableErrBoundary extends React.Component<{}, ErrorState> {
+export class LoadableErrBoundary extends React.Component<ErrorProps, ErrorState> {
   public static getDerivedStateFromError(error: any) {
     return { hasError: true };
   }
@@ -33,14 +35,14 @@ export class LoadableErrBoundary extends React.Component<{}, ErrorState> {
     };
   }
 
-  public componentDidCatch(error: Error, errorInfo: React.ErrorInfo) {
-    console.log(error, errorInfo);
-  }
+  // public componentDidCatch(error: Error, errorInfo: React.ErrorInfo) {
+  // //TODO: send to error reporting service
+  // }
 
   public render() {
     if (this.state.hasError) {
       return (
-        <LoadableError />
+        this.props.error
       );
     }
 

@@ -1,9 +1,9 @@
 import * as React from "react";
-import { multiply } from "../utils/utils";
-import { Nav } from "./Nav";
-import { ENV } from "../constants/envs";
 
-declare const NODE_ENV: string;
+import { ENV } from "../constants/envs";
+import { multiply } from "../utils/utils";
+
+import { Nav } from "./Nav";
 
 export class Main extends React.Component<{}> {
   public render() {

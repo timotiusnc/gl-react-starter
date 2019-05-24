@@ -14,13 +14,10 @@
 
 import * as React from "react";
 
-import { Nav } from "../Nav";
-
 export class LoadableError extends React.Component<{}> {
   public render() {
     return (
       <>
-        <Nav />
         Error loading loadable component!!
       </>
     );

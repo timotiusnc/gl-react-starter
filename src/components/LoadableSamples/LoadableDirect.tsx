@@ -14,7 +14,7 @@
  * Author: Timotius Nugroho Chandra (timotius.n.chandra@gdplabs.id)
  * Created at: May 21st 2019
  * -----
- * Last Modified: May 21st 2019
+ * Last Modified: May 24th 2019
  * Modified By: Timotius Nugroho Chandra (timotius.n.chandra@gdplabs.id)
  * -----
  * Copyright (c) 2019 GLAIR. All rights reserved.
@@ -22,14 +22,13 @@
 
 import * as React from "react";
 
-import { GLLoadable, GLLoadableOpts } from "../../helpers/GLLoadable";
+import { GLLoadable, GLLoadableOpts } from "../../helpers/GLLoadable/GLLoadable";
+import { LoadingSuspense } from "../../helpers/GLLoadable/Loading/LoadingSuspense";
 import Test from "../Test";
-
-import { LoadingSuspense } from "./LoadingSuspense";
 
 const loadableOptions: GLLoadableOpts = {
   loader: () => new Promise<{ default: any }>((resolve, _) => {
-    setTimeout(() => resolve({ default: () => <Test /> }), 500);
+    setTimeout(() => resolve({ default: () => <div>asu</div> }), 500);
   }),
   loading: LoadingSuspense,
 };

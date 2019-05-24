@@ -15,9 +15,9 @@
 import * as React from "react";
 import * as Loadable from "react-loadable";
 
-import { LoadableError } from "./LoadableError";
+import { LoadableError } from "../Error/LoadableError";
 
-export class Loading extends React.Component<Loadable.LoadingComponentProps> {
+export class LoadingLoadable extends React.Component<Loadable.LoadingComponentProps> {
   public render() {
     if (this.props.error) {
       return (

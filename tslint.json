@@ -12,6 +12,7 @@
       true,
       "never-prefix"
     ],
+    "object-literal-sort-keys": false,
     "ordered-imports": [
       // By default, sort alphabetically and case-insensitively
       true,
