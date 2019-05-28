@@ -1,11 +1,13 @@
 /*
  * GLLoadable.test.tsx
- * Inspiration: https://www.youtube.com/watch?v=lfb5jvHq9c4
+ * Several usage samples of GLLoadable using React-Suspense and React-Loadable.
+ * Please read the "describe" and "it" notes first to get an idea of what the test want to achieve.
+ * Inspiration: https://www.youtube.com/watch?v=lfb5jvHq9c4.
  *
  * Author: Timotius Nugroho Chandra (timotius.n.chandra@gdplabs.id)
  * Created at: May 23rd 2019
  * -----
- * Last Modified: May 24th 2019
+ * Last Modified: May 27th 2019
  * Modified By: Timotius Nugroho Chandra (timotius.n.chandra@gdplabs.id)
  * -----
  * Copyright (c) 2019 GLAIR. All rights reserved.

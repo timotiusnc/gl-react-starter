@@ -5,7 +5,7 @@
  * Author: Timotius Nugroho Chandra (timotius.n.chandra@gdplabs.id)
  * Created at: May 24th 2019
  * -----
- * Last Modified: May 27th 2019
+ * Last Modified: May 28th 2019
  * Modified By: Timotius Nugroho Chandra (timotius.n.chandra@gdplabs.id)
  * -----
  * Copyright (c) 2019 GLAIR. All rights reserved.
@@ -27,7 +27,7 @@ interface TestRouteState {
   d: string;
 }
 
-export default class TestRoute extends React.Component<TestRouteProps, TestRouteState> {
+export default class TestRoute3 extends React.Component<TestRouteProps, TestRouteState> {
   public static defaultProps = {
     a: 1,
     b: "dummy",
@@ -45,7 +45,7 @@ export default class TestRoute extends React.Component<TestRouteProps, TestRoute
     return (
       <>
         <Nav />
-        Test component. Path: {this.props.match.path}
+        Test component 3. Path: {this.props.match.path}
         <AnotherTest />
       </>
     );

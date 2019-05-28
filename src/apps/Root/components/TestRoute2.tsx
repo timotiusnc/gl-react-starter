@@ -27,7 +27,7 @@ interface TestRouteState {
   d: string;
 }
 
-export default class TestRoute extends React.Component<TestRouteProps, TestRouteState> {
+export default class TestRoute2 extends React.Component<TestRouteProps, TestRouteState> {
   public static defaultProps = {
     a: 1,
     b: "dummy",
@@ -45,7 +45,7 @@ export default class TestRoute extends React.Component<TestRouteProps, TestRoute
     return (
       <>
         <Nav />
-        Test component. Path: {this.props.match.path}
+        Test component 2. Path: {this.props.match.path}
         <AnotherTest />
       </>
     );
