@@ -11,7 +11,7 @@
  * Author: Timotius Nugroho Chandra (timotius.n.chandra@gdplabs.id)
  * Created at: May 28th 2019
  * -----
- * Last Modified: May 28th 2019
+ * Last Modified: May 29th 2019
  * Modified By: Timotius Nugroho Chandra (timotius.n.chandra@gdplabs.id)
  * -----
  * Copyright (c) 2019 GLAIR. All rights reserved.
@@ -19,26 +19,27 @@
 
 import * as React from "react";
 import { Route, Router, Switch } from "react-router";
-import { RootConfig } from "RootConfig";
 
 import { Main } from "./components/Main";
-import createBrowserHistory from "./helpers/history";
+import { TestRouteProps } from "./components/TestRoute";
+import createBrowserHistory from "./helpers/browserHistory";
+import { loadable } from "./index";
 
 const TestRoute = import(/*webpackChunkName: "TestRoute1" */"./components/TestRoute");
 
-const LoadableImport = RootConfig.loadable({
+const LoadableImport = loadable({
   loader: () => TestRoute,
-});
+}) as React.ComponentType<TestRouteProps>;
 
-const LoadableImport2 = RootConfig.loadable({
+const LoadableImport2 = loadable({
   loader: () => import(/*webpackChunkName: "TestRoute2" */"./components/TestRoute2"),
-});
+}) as React.ComponentType<TestRouteProps>;
 
-const LoadableImport3 = RootConfig.loadable({
+const LoadableImport3 = loadable({
   loader: () => import(/*webpackChunkName: "TestRoute3" */"./components/TestRoute3"),
 });
 
-const LoadableReject = RootConfig.loadable({
+const LoadableReject = loadable({
   loader: () => {
     if (Date.now() % 2 === 0) {
       return new Promise<{ default: any }>((resolve, _) => {
@@ -50,7 +51,7 @@ const LoadableReject = RootConfig.loadable({
   },
 });
 
-const LoadableDirect = RootConfig.loadable({
+const LoadableDirect = loadable({
   loader: () => new Promise<{ default: any }>((resolve, _) => {
     setTimeout(() => resolve({ default: () => <div>asu</div> }), 500);
   }),
@@ -59,7 +60,7 @@ const LoadableDirect = RootConfig.loadable({
 export class Root extends React.Component<{}> {
   public render() {
     return (
-      <Router history={createBrowserHistory()}>
+      <Router history={createBrowserHistory}>
         <Switch>
           <Route exact={true} path="/" component={Main} />
           <Route exact={true} path="/import" component={LoadableImport} />

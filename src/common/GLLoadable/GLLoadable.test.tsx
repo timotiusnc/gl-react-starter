@@ -7,7 +7,7 @@
  * Author: Timotius Nugroho Chandra (timotius.n.chandra@gdplabs.id)
  * Created at: May 23rd 2019
  * -----
- * Last Modified: May 27th 2019
+ * Last Modified: May 29th 2019
  * Modified By: Timotius Nugroho Chandra (timotius.n.chandra@gdplabs.id)
  * -----
  * Copyright (c) 2019 GLAIR. All rights reserved.
@@ -20,7 +20,8 @@ import { Router } from "react-router";
 import { render, wait } from "react-testing-library";
 import "react-testing-library/cleanup-after-each";
 
-import { GLLoadableOpts, GLReactLoadable, GLReactSuspense } from "./GLLoadable";
+import { GLLoadableOpts } from "../../domain/GLLoadable";
+import { GLReactLoadable, GLReactSuspense } from "../GLLoadable/index";
 
 function renderWithRouter(
   ui: JSX.Element,

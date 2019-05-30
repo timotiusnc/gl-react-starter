@@ -2,8 +2,15 @@
   "compilerOptions": {
     "baseUrl": ".",
     "paths": {
-      "RootConfig": [
-        "src/apps/Root/index"
+      "@common/*": [
+        "src/common/*",
+        "src/common/*/index.ts",
+        "src/common/*/index.tsx"
+      ],
+      "@domain/*": [
+        "src/domain/*",
+        "src/domain/*/index.ts",
+        "src/domain/*/index.tsx"
       ]
     },
     // "sourceMap" is needed for debugging purpose.
@@ -24,7 +31,6 @@
     "noUnusedParameters": false, //To warn us with unused parameters.
     "forceConsistentCasingInFileNames": true,
     "noImplicitReturns": true,
-    "allowSyntheticDefaultImports": true,
     "lib": [
       "dom", // Needed so we can access "window" object.
       "es2015" // "A dynamic import call in ES5/ES3 requires the 'Promise' constructor.  Make sure you have a declaration for the 'Promise' constructor or include 'ES2015' in your `--lib` option.."

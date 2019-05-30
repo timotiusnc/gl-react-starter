@@ -1,18 +1,13 @@
+import { GLLoadableOpts } from "@domain/GLLoadable";
 import * as React from "react";
 import * as Loadable from "react-loadable";
 
-import OptionsWithoutRender = LoadableExport.OptionsWithoutRender;
 import { LoadableErrBoundary } from "./Error/LoadableErrBoundary";
 import { LoadableError } from "./Error/LoadableError";
 import { LoadingLoadable } from "./Loading/LoadingLoadable";
 import { LoadingSuspense } from "./Loading/LoadingSuspense";
 
-export interface GLLoadableOpts {
-  loading?: React.ComponentType<any> | (() => null);
-  error?: React.ComponentType<any> | (() => null);
-  // loader(): Promise<{ default: React.ComponentType<any> }>; // For React Loadable
-  loader(): Promise<{ default: any }>; // For React Suspense
-}
+import OptionsWithoutRender = LoadableExport.OptionsWithoutRender;
 
 export function GLReactLoadable(opts: GLLoadableOpts) {
   const loadableOptions: OptionsWithoutRender<any> = {
