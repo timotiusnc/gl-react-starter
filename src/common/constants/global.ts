@@ -7,10 +7,15 @@
  * Example usage: we want to expose APP_VERSION variable (user can write it down on dev console)
  * and it will show the value we provided.
  *
+ * To add your own global var:
+ * 1. Augment window variable in typings.d.ts with your own global var
+ * 2. Declare your global var in this file (so it can access value from webpack.DefinePlugin)
+ * 3. Assign window.<your var> = <your var>.
+ *
  * Author: Timotius Nugroho Chandra (timotius.n.chandra@gdplabs.id)
  * Created at: May 21st 2019
  * -----
- * Last Modified: May 23rd 2019
+ * Last Modified: May 30th 2019
  * Modified By: Timotius Nugroho Chandra (timotius.n.chandra@gdplabs.id)
  * -----
  * Copyright (c) 2019 GLAIR. All rights reserved.
