@@ -7,18 +7,18 @@
  * Author: Timotius Nugroho Chandra (timotius.n.chandra@gdplabs.id)
  * Created at: May 23rd 2019
  * -----
- * Last Modified: May 31st 2019
+ * Last Modified: June 1st 2019
  * Modified By: Timotius Nugroho Chandra (timotius.n.chandra@gdplabs.id)
  * -----
  * Copyright (c) 2019 GLAIR. All rights reserved.
  */
 
+import { render, wait } from "@testing-library/react";
+import "@testing-library/react/cleanup-after-each";
 import { createMemoryHistory } from "history";
 import "jest-dom/extend-expect";
 import * as React from "react";
 import { Router } from "react-router";
-import { render, wait } from "react-testing-library";
-import "react-testing-library/cleanup-after-each";
 
 import { GLLoadableOpts } from "../../domain/GLLoadable";
 import { GLReactLoadable, GLReactSuspense } from "../GLLoadable/index";

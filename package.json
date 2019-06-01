@@ -28,6 +28,7 @@
     "react-router-dom": "React de-facto library for routing (move between HTML pages)"
   },
   "devDependencies": {
+    "@testing-library/react": "8.0.1",
     "@types/jest": "24.0.13",
     "@types/react": "16.8.17",
     "@types/react-dom": "16.8.4",
@@ -38,7 +39,6 @@
     "html-webpack-plugin": "3.2.0",
     "jest": "24.8.0",
     "jest-dom": "3.3.0",
-    "react-testing-library": "7.0.1",
     "ts-jest": "24.0.2",
     "ts-loader": "5.3.3",
     "tslint": "5.16.0",
@@ -50,6 +50,7 @@
     "webpack-merge": "4.2.1"
   },
   "devDependenciesComments": {
+    "@testing-library/react": "So we can test React component the way we will use it in development",
     "@types/jest": "TypeScript typings for jest (test library)",
     "@types/react": "TypeScript typings for react",
     "@types/react-dom": "TypeScript typings for react-dom",
@@ -60,7 +61,6 @@
     "html-webpack-plugin": "Generate HTML for us, completed with link to our bundles src",
     "jest": "Test library",
     "jest-dom": "Enhance jest so we have custom matchers that will make our test easier, e.g. toHaveAttribute, toBeDisabled",
-    "react-testing-library": "So we can test React component the way we will use it in development",
     "ts-jest": "TypeScript loader for jest",
     "ts-loader": "Preprocess (compile) TypeScript to JavaScript",
     "tslint": "TypeScript linting",
