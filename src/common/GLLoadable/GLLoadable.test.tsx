@@ -7,7 +7,7 @@
  * Author: Timotius Nugroho Chandra (timotius.n.chandra@gdplabs.id)
  * Created at: May 23rd 2019
  * -----
- * Last Modified: May 30th 2019
+ * Last Modified: May 31st 2019
  * Modified By: Timotius Nugroho Chandra (timotius.n.chandra@gdplabs.id)
  * -----
  * Copyright (c) 2019 GLAIR. All rights reserved.
@@ -62,12 +62,12 @@ describe("GLLoadable", () => {
     it("should render loading component when loading is specified", () => {
       const customLoadingLoadableOptions: GLLoadableOpts = {
         loader: () => import("./Test"),
-        loading: () => <div>dummy</div>,
+        loading: () => <div>dummy loading</div>,
       };
 
       const LoadableElmt = GLLoadable(customLoadingLoadableOptions);
       const { getByText } = render(<LoadableElmt />);
-      expect(getByText("dummy")).toBeInTheDocument();
+      expect(getByText("dummy loading")).toBeInTheDocument();
     });
 
     it("should render error component if something goes wrong", async () => {
@@ -84,13 +84,13 @@ describe("GLLoadable", () => {
     it("should render error component when error is specified", async () => {
       const errLoadableOptions: GLLoadableOpts = {
         loader: () => new Promise<{ default: React.ComponentType<any> }>((_, reject) => reject("Error")),
-        error: () => <div>dummy</div>,
+        error: () => <div>dummy error</div>,
       };
       const LoadableElmt = GLLoadable(errLoadableOptions);
       const { getByText } = render(<LoadableElmt />);
 
       await wait();
-      expect(getByText("dummy")).toBeInTheDocument();
+      expect(getByText("dummy error")).toBeInTheDocument();
     });
 
     // This kind of defeat the purpose of code-splitting via asynchronously loading component.

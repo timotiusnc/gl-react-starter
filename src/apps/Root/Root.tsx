@@ -11,7 +11,7 @@
  * Author: Timotius Nugroho Chandra (timotius.n.chandra@gdplabs.id)
  * Created at: May 28th 2019
  * -----
- * Last Modified: May 29th 2019
+ * Last Modified: June 1st 2019
  * Modified By: Timotius Nugroho Chandra (timotius.n.chandra@gdplabs.id)
  * -----
  * Copyright (c) 2019 GLAIR. All rights reserved.
@@ -22,6 +22,8 @@ import { Route, Router, Switch } from "react-router";
 
 import { Main } from "./components/Main";
 import { TestRouteProps } from "./components/TestRoute";
+import { TestRoute2Props } from "./components/TestRoute2";
+import { TestRoute3Props } from "./components/TestRoute3";
 import createBrowserHistory from "./helpers/browserHistory";
 import { loadable } from "./index";
 
@@ -33,11 +35,11 @@ const LoadableImport = loadable({
 
 const LoadableImport2 = loadable({
   loader: () => import(/*webpackChunkName: "TestRoute2" */"./components/TestRoute2"),
-}) as React.ComponentType<TestRouteProps>;
+}) as React.ComponentType<TestRoute2Props>;
 
 const LoadableImport3 = loadable({
   loader: () => import(/*webpackChunkName: "TestRoute3" */"./components/TestRoute3"),
-});
+}) as React.ComponentType<TestRoute3Props>;
 
 const LoadableReject = loadable({
   loader: () => {
