@@ -4,7 +4,7 @@
  * Author: Timotius Nugroho Chandra (timotius.n.chandra@gdplabs.id)
  * Created at: May 3rd 2019
  * -----
- * Last Modified: May 30th 2019
+ * Last Modified: June 3rd 2019
  * Modified By: Timotius Nugroho Chandra (timotius.n.chandra@gdplabs.id)
  * -----
  * Copyright (c) 2019 GLAIR. All rights reserved.
@@ -14,11 +14,10 @@ import * as React from "react";
 import * as ReactDOM from "react-dom";
 
 import { Root } from "./apps/Root/Root";
-import { ENV } from "./common/constants/envs";
-import { defineGlobalVar } from "./common/constants/global";
+import { ENV, initGlobalVar } from "./common/constants/envs";
 
 const { GRAPHQL_URL } = ENV;
-defineGlobalVar();
+initGlobalVar();
 
 // React render test
 ReactDOM.render(<Root />, document.getElementById("root"));

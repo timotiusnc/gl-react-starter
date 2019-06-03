@@ -7,6 +7,7 @@
     "buildProd": "webpack --config webpack.prod.js --progress",
     "build": "npm run buildProd",
     "lint": "./node_modules/tslint/bin/tslint -p tsconfig.json",
+    "lint-fix": "./node_modules/tslint/bin/tslint -p tsconfig.json --fix",
     "start": "webpack-dev-server --config webpack.dev.js",
     "test": "jest"
   },
@@ -18,12 +19,14 @@
   "dependencies": {
     "react": "16.8.6",
     "react-dom": "16.8.6",
+    "react-intl": "2.9.0",
     "react-loadable": "5.5.0",
     "react-router-dom": "5.0.0"
   },
   "dependenciesComments": {
     "react": "React library",
     "react-dom": "Render React component into DOM",
+    "react-intl": "I18N and L10N library",
     "react-loadable": "If we can't use React Suspense (because we need SSR), we need to use this react-lodable",
     "react-router-dom": "React de-facto library for routing (move between HTML pages)"
   },
@@ -32,6 +35,7 @@
     "@types/jest": "24.0.13",
     "@types/react": "16.8.17",
     "@types/react-dom": "16.8.4",
+    "@types/react-intl": "2.3.17",
     "@types/react-loadable": "5.5.1",
     "@types/react-router-dom": "4.3.3",
     "clean-webpack-plugin": "2.0.1",
@@ -54,6 +58,7 @@
     "@types/jest": "TypeScript typings for jest (test library)",
     "@types/react": "TypeScript typings for react",
     "@types/react-dom": "TypeScript typings for react-dom",
+    "@types/react-intl": "TypeScript typings for react-intl",
     "@types/react-loadable": "TypeScript for react-loadable",
     "@types/react-router-dom": "TypeScript for react-router-dom",
     "clean-webpack-plugin": "Clean specific folder (usually `dist`) before building",
