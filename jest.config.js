@@ -10,15 +10,13 @@
  * Author: Timotius Nugroho Chandra (timotius.n.chandra@gdplabs.id)
  * Created at: May 23rd 2019
  * -----
- * Last Modified: May 24th 2019
+ * Last Modified: June 3rd 2019
  * Modified By: Timotius Nugroho Chandra (timotius.n.chandra@gdplabs.id)
  * -----
  * Copyright (c) 2019 GLAIR. All rights reserved.
  */
 
 module.exports = {
-  collectCoverage: true,
-
   // Which files will be used to calculate code coverage
   collectCoverageFrom: ['src/**/*.{ts,tsx}'],
 
