@@ -29,7 +29,11 @@ export class LoadingLoadable extends React.Component<Loadable.LoadingComponentPr
     }
 
     if (this.props.timedOut) {
-      return <div>Taking a long time... <button onClick={this.props.retry}>Retry</button></div>;
+      return (
+        <div>
+          Taking a long time... <button onClick={this.props.retry}>Retry</button>
+        </div>
+      );
     }
 
     if (this.props.pastDelay) {

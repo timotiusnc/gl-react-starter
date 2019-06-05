@@ -1,10 +1,10 @@
-const merge = require('webpack-merge');
-const common = require('./webpack.common');
-const Dotenv = require('dotenv-webpack');
-var webpack = require('webpack');
+const merge = require("webpack-merge");
+const common = require("./webpack.common");
+const Dotenv = require("dotenv-webpack");
+var webpack = require("webpack");
 
 module.exports = merge(common, {
-  mode: 'production',
+  mode: "production",
 
   // "A separate source map is generated and no link from bundled code to
   // Line numbers are correctly mapped since it gets mapped to the original code.
@@ -16,11 +16,11 @@ module.exports = merge(common, {
   //  secure, if we want to know the source down to line number, we must trace it using the map file (usually upload it to error reporting service)
   // 'source-map': "Uncaught TypeError: Cannot read property 'xxx' of undefined at eval (index.tsx:8)"
   //  not secure, user can see it (if it's uploaded)
-  devtool: 'hidden-source-map',
+  devtool: "hidden-source-map",
 
   plugins: [
     new Dotenv({
-      path: './.env',
+      path: "./.env",
       safe: true,
       systemvars: true
     }),
@@ -30,7 +30,7 @@ module.exports = merge(common, {
     // In the future, this might need upgrade if we want to include commit hash in this VERSION string.
     // Will need to work with infra team on how to approach it.
     new webpack.DefinePlugin({
-      'APP_VERSION': JSON.stringify('0.0.1')
+      APP_VERSION: JSON.stringify("0.0.1")
     })
   ]
 });

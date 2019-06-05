@@ -15,10 +15,7 @@
 import * as React from "react";
 
 export default class Test extends React.Component<{}> {
-
   public render() {
-    return (
-      <div>Test component</div>
-    );
+    return <div>Test component</div>;
   }
 }

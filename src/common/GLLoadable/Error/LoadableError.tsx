@@ -16,10 +16,6 @@ import * as React from "react";
 
 export class LoadableError extends React.Component<{}> {
   public render() {
-    return (
-      <>
-        Error loading loadable component!!
-      </>
-    );
+    return <>Error loading loadable component!!</>;
   }
 }

@@ -22,5 +22,5 @@ export interface RootContext {
 export const RootCtx = React.createContext<RootContext>({
   locale: "id",
   theme: "light",
-  setLocale: (locale: string) => undefined,
+  setLocale: (locale: string) => undefined
 });

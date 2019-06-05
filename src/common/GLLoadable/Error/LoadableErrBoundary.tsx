@@ -31,7 +31,7 @@ export class LoadableErrBoundary extends React.Component<ErrorProps, ErrorState>
   constructor(props: any) {
     super(props);
     this.state = {
-      hasError: false,
+      hasError: false
     };
   }
 
@@ -41,9 +41,7 @@ export class LoadableErrBoundary extends React.Component<ErrorProps, ErrorState>
 
   public render() {
     if (this.state.hasError) {
-      return (
-        this.props.error
-      );
+      return this.props.error;
     }
 
     return this.props.children;

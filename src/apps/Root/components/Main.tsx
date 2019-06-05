@@ -2,7 +2,6 @@ import { ENV } from "@common/constants/envs";
 import * as React from "react";
 import { FormattedMessage } from "react-intl";
 import { RouteComponentProps } from "react-router";
-
 import { RootCtx } from "../context/RootCtx";
 import { multiply } from "../utils/utils";
 
@@ -18,10 +17,10 @@ export const Main = (props: RouteComponentProps) => {
     console.log(multiply(1, 3));
 
     // Dynamic import examples
-    import(/*webpackChunkName: "Utils" */"../utils/kambing").then((module) => module.kambing());
+    import(/*webpackChunkName: "Utils" */ "../utils/kambing").then(module => module.kambing());
 
     if (0 === 2 - 2) {
-      import(/*webpackChunkName: "Utils" */"../utils/macan").then((module) => module.macan());
+      import(/*webpackChunkName: "Utils" */ "../utils/macan").then(module => module.macan());
     }
   };
 

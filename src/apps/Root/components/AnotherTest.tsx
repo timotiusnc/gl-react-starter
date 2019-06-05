@@ -14,10 +14,7 @@
 import * as React from "react";
 
 export default class AnotherTest extends React.Component<{}> {
-
   public render() {
-    return (
-      <div>Another test component</div>
-    );
+    return <div>Another test component</div>;
   }
 }

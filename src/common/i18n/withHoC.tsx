@@ -18,8 +18,7 @@
 import * as React from "react";
 
 // HOC that wraps class component
-export const withHoCClass = <P extends object>
-  (WrappedComponent: React.ComponentType<P>, param: any) =>
+export const withHoCClass = <P extends object>(WrappedComponent: React.ComponentType<P>, param: any) =>
   class WithI18NProviderClass extends React.Component<P> {
     constructor(props: P) {
       super(props);
@@ -36,14 +35,14 @@ export const withHoCClass = <P extends object>
   };
 
 // HOC that wraps function component
-export const withHoCFC = <P extends object>
-  (WrappedComponent: React.ComponentType<P>, param: any): React.FC<P> =>
-  ({ ...props }: P) => {
-    // Do initialization if necessary
+export const withHoCFC = <P extends object>(WrappedComponent: React.ComponentType<P>, param: any): React.FC<P> => ({
+  ...props
+}: P) => {
+  // Do initialization if necessary
 
-    return (
-      <div>
-        <WrappedComponent {...props as P} />
-      </div>
-    );
-  };
+  return (
+    <div>
+      <WrappedComponent {...props as P} />
+    </div>
+  );
+};

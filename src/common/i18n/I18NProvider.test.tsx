@@ -5,7 +5,7 @@
  * Author: Timotius Nugroho Chandra (timotius.n.chandra@gdplabs.id)
  * Created at: June 3rd 2019
  * -----
- * Last Modified: June 3rd 2019
+ * Last Modified: June 5th 2019
  * Modified By: Timotius Nugroho Chandra (timotius.n.chandra@gdplabs.id)
  * -----
  * Copyright (c) 2019 GLAIR. All rights reserved.
@@ -24,7 +24,10 @@ describe("i18n", () => {
     locale: string;
     setLocale: (locale: string) => void;
   }
-  const RootCtx = React.createContext<RootCtxProps>({ locale: "dummy", setLocale: (locale: string) => undefined });
+  const RootCtx = React.createContext<RootCtxProps>({
+    locale: "dummy",
+    setLocale: (locale: string) => undefined
+  });
 
   const Root: React.FC<{}> = () => {
     const [locale, setLocale] = React.useState("id");

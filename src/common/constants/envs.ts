@@ -31,7 +31,7 @@
  */
 const INTERMEDIATE_ENV = {
   APP_ENV: process.env.NODE_ENV,
-  GRAPHQL_URL: process.env.GRAPHQL_URL,
+  GRAPHQL_URL: process.env.GRAPHQL_URL
 };
 export const ENV = INTERMEDIATE_ENV;
 

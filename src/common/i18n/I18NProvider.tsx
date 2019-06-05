@@ -8,7 +8,7 @@
  * Author: Timotius Nugroho Chandra (timotius.n.chandra@gdplabs.id)
  * Created at: June 2nd 2019
  * -----
- * Last Modified: June 3rd 2019
+ * Last Modified: June 5th 2019
  * Modified By: Timotius Nugroho Chandra (timotius.n.chandra@gdplabs.id)
  * -----
  * Copyright (c) 2019 GLAIR. All rights reserved.
@@ -32,10 +32,10 @@ export interface I18NProps {
 // '{ en: { asu: string; }; id: { asu: string; }; }' has no index signature
 const messages: { [index: string]: {} } = {
   en: messagesEN,
-  id: messagesID,
+  id: messagesID
 };
 
-export const I18NProvider: React.SFC<I18NProps> = (props) => {
+export const I18NProvider: React.SFC<I18NProps> = props => {
   addLocaleData(localeEN);
   addLocaleData(localeID);
 

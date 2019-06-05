@@ -12,7 +12,7 @@ import OptionsWithoutRender = LoadableExport.OptionsWithoutRender;
 export function GLReactLoadable(opts: GLLoadableOpts) {
   const loadableOptions: OptionsWithoutRender<any> = {
     loader: opts.loader,
-    loading: opts.loading ? opts.loading : LoadingLoadable,
+    loading: opts.loading ? opts.loading : LoadingLoadable
   };
 
   return Loadable(loadableOptions);

@@ -7,7 +7,7 @@
  * Author: Timotius Nugroho Chandra (timotius.n.chandra@gdplabs.id)
  * Created at: May 23rd 2019
  * -----
- * Last Modified: June 1st 2019
+ * Last Modified: June 5th 2019
  * Modified By: Timotius Nugroho Chandra (timotius.n.chandra@gdplabs.id)
  * -----
  * Copyright (c) 2019 GLAIR. All rights reserved.
@@ -25,21 +25,18 @@ import { GLReactLoadable, GLReactSuspense } from "../GLLoadable/index";
 
 function renderWithRouter(
   ui: JSX.Element,
-  {
-    route = "/",
-    history = createMemoryHistory({ initialEntries: [route] }),
-  } = {},
+  { route = "/", history = createMemoryHistory({ initialEntries: [route] }) } = {}
 ) {
   return {
     ...render(<Router history={history}>{ui}</Router>),
-    history,
+    history
   };
 }
 
 describe("GLLoadable", () => {
   // Normal condition, should render the loadable Test component
   const loadableOptions: GLLoadableOpts = {
-    loader: () => import("./Test"),
+    loader: () => import("./Test")
   };
 
   describe("using React Suspense", () => {
@@ -62,7 +59,7 @@ describe("GLLoadable", () => {
     it("should render loading component when loading is specified", () => {
       const customLoadingLoadableOptions: GLLoadableOpts = {
         loader: () => import("./Test"),
-        loading: () => <div>dummy loading</div>,
+        loading: () => <div>dummy loading</div>
       };
 
       const LoadableElmt = GLLoadable(customLoadingLoadableOptions);
@@ -72,7 +69,7 @@ describe("GLLoadable", () => {
 
     it("should render error component if something goes wrong", async () => {
       const errLoadableOptions: GLLoadableOpts = {
-        loader: () => new Promise<{ default: React.ComponentType<any> }>((_, reject) => reject("Error")),
+        loader: () => new Promise<{ default: React.ComponentType<any> }>((_, reject) => reject("Error"))
       };
       const LoadableElmt = GLLoadable(errLoadableOptions);
       const { getByText } = render(<LoadableElmt />);
@@ -84,7 +81,7 @@ describe("GLLoadable", () => {
     it("should render error component when error is specified", async () => {
       const errLoadableOptions: GLLoadableOpts = {
         loader: () => new Promise<{ default: React.ComponentType<any> }>((_, reject) => reject("Error")),
-        error: () => <div>dummy error</div>,
+        error: () => <div>dummy error</div>
       };
       const LoadableElmt = GLLoadable(errLoadableOptions);
       const { getByText } = render(<LoadableElmt />);
@@ -97,7 +94,7 @@ describe("GLLoadable", () => {
     // This is just to show that it works.
     it("should render loadable component given direct component declaration", async () => {
       const directLoadableOptions: GLLoadableOpts = {
-        loader: () => new Promise<{ default: any }>((resolve, _) => resolve({ default: () => <div>Direct</div> })),
+        loader: () => new Promise<{ default: any }>((resolve, _) => resolve({ default: () => <div>Direct</div> }))
       };
       const LoadableElmt = GLLoadable(directLoadableOptions);
       const { getByText } = render(<LoadableElmt />);
@@ -126,7 +123,7 @@ describe("GLLoadable", () => {
 
     it("should render error component if something goes wrong", async () => {
       const errLoadableOptions: GLLoadableOpts = {
-        loader: () => new Promise<{ default: React.ComponentType<any> }>((_, reject) => reject("Error")),
+        loader: () => new Promise<{ default: React.ComponentType<any> }>((_, reject) => reject("Error"))
       };
       const LoadableElmt = GLLoadable(errLoadableOptions);
       const { getByText } = render(<LoadableElmt />);

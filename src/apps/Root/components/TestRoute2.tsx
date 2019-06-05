@@ -31,14 +31,14 @@ interface TestRoute2State {
 export default class TestRoute2 extends React.Component<TestRoute2Props, TestRoute2State> {
   public static defaultProps = {
     a: 1,
-    b: "dummy",
+    b: "dummy"
   };
 
   public constructor(props: TestRoute2Props) {
     super(props);
     this.state = {
       c: 2,
-      d: "dumdummy",
+      d: "dumdummy"
     };
   }
 

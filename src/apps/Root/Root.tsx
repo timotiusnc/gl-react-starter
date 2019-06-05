@@ -11,7 +11,7 @@
  * Author: Timotius Nugroho Chandra (timotius.n.chandra@gdplabs.id)
  * Created at: May 28th 2019
  * -----
- * Last Modified: June 2nd 2019
+ * Last Modified: June 5th 2019
  * Modified By: Timotius Nugroho Chandra (timotius.n.chandra@gdplabs.id)
  * -----
  * Copyright (c) 2019 GLAIR. All rights reserved.
@@ -29,18 +29,18 @@ import { RootCtx } from "./context/RootCtx";
 import createBrowserHistory from "./helpers/browserHistory";
 import { loadable } from "./index";
 
-const TestRoute = import(/*webpackChunkName: "TestRoute1" */"./components/TestRoute");
+const TestRoute = import(/*webpackChunkName: "TestRoute1" */ "./components/TestRoute");
 
 const LoadableImport = loadable({
-  loader: () => TestRoute,
+  loader: () => TestRoute
 }) as React.ComponentType<TestRouteProps>;
 
 const LoadableImport2 = loadable({
-  loader: () => import(/*webpackChunkName: "TestRoute2" */"./components/TestRoute2"),
+  loader: () => import(/*webpackChunkName: "TestRoute2" */ "./components/TestRoute2")
 }) as React.ComponentType<TestRoute2Props>;
 
 const LoadableImport3 = loadable({
-  loader: () => import(/*webpackChunkName: "TestRoute3" */"./components/TestRoute3"),
+  loader: () => import(/*webpackChunkName: "TestRoute3" */ "./components/TestRoute3")
 }) as React.ComponentType<TestRoute3Props>;
 
 const LoadableReject = loadable({
@@ -52,13 +52,14 @@ const LoadableReject = loadable({
     }
 
     return new Promise<{ default: React.ComponentType<any> }>((_, reject) => reject("Error"));
-  },
+  }
 });
 
 const LoadableDirect = loadable({
-  loader: () => new Promise<{ default: any }>((resolve, _) => {
-    setTimeout(() => resolve({ default: () => <div>asu</div> }), 500);
-  }),
+  loader: () =>
+    new Promise<{ default: any }>((resolve, _) => {
+      setTimeout(() => resolve({ default: () => <div>asu</div> }), 500);
+    })
 });
 
 export const Root = (props: any) => {

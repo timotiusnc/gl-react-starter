@@ -30,14 +30,14 @@ interface TestRoute3State {
 export default class TestRoute3 extends React.Component<TestRoute3Props, TestRoute3State> {
   public static defaultProps = {
     a: 1,
-    b: "dummy",
+    b: "dummy"
   };
 
   public constructor(props: TestRoute3Props) {
     super(props);
     this.state = {
       c: 2,
-      d: "dumdummy",
+      d: "dumdummy"
     };
   }
 

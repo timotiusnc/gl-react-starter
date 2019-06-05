@@ -1,10 +1,7 @@
 {
   // A stable, somewhat opinionated set of rules encouraged by Palantir for general TypeScript programming
   // https://github.com/palantir/tslint/tree/master/src/configs
-  "extends": [
-    "tslint:recommended",
-    "tslint-react"
-  ],
+  "extends": ["tslint:recommended", "tslint-react", "tslint-config-prettier"],
   // Overridden rules
   "rules": {
     "interface-name": [
