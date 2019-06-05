@@ -18,13 +18,13 @@
 
 module.exports = {
   // Which files will be used to calculate code coverage
-  collectCoverageFrom: ['src/**/*.{ts,tsx}'],
+  collectCoverageFrom: ["src/**/*.{ts,tsx}"],
 
   // ts-jest will need its own special tsconfig file so it won't result in error
   // See tsconfig.test.json for more details
   globals: {
     "ts-jest": {
-      tsConfig: 'tsconfig.test.json'
+      tsConfig: "tsconfig.test.json"
     }
   },
 
@@ -32,5 +32,5 @@ module.exports = {
   // Kind of like webpack loader.
   transform: {
     "^.+\\.(ts|tsx)?$": "ts-jest"
-  },
+  }
 };

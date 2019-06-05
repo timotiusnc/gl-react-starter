@@ -4,6 +4,6 @@
 {
   "extends": "./tsconfig",
   "compilerOptions": {
-    "module": "commonjs", // The fundamental diff is this. In tsconfig.json, it's "esNext". See tsconfig.json for more details.
+    "module": "commonjs" // The fundamental diff is this. In tsconfig.json, it's "esNext". See tsconfig.json for more details.
   }
 }
