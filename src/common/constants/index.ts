@@ -1,12 +1,12 @@
 /*
- * envs.ts
+ * index.ts
  * Centralize constants from "process.env" and set global variables so it will be accessible
  * in dev console.
  *
  * Author: Timotius Nugroho Chandra (timotius.n.chandra@gdplabs.id)
  * Created at: May 21st 2019
  * -----
- * Last Modified: June 3rd 2019
+ * Last Modified: June 5th 2019
  * Modified By: Timotius Nugroho Chandra (timotius.n.chandra@gdplabs.id)
  * -----
  * Copyright (c) 2019 GLAIR. All rights reserved.

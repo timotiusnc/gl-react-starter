@@ -1,7 +1,8 @@
-import { ENV } from "@common/constants/envs";
+import { ENV } from "@common/constants";
 import * as React from "react";
 import { FormattedMessage } from "react-intl";
 import { RouteComponentProps } from "react-router";
+
 import { RootCtx } from "../context/RootCtx";
 import { multiply } from "../utils/utils";
 

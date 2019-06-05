@@ -17,7 +17,7 @@
  * Copyright (c) 2019 GLAIR. All rights reserved.
  */
 
-import { I18NProvider } from "@common/i18n/I18NProvider";
+import { I18NProvider } from "@common/i18n";
 import * as React from "react";
 import { Route, Router, Switch } from "react-router";
 

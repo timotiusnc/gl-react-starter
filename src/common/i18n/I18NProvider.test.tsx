@@ -17,7 +17,7 @@ import "jest-dom/extend-expect";
 import * as React from "react";
 import { FormattedMessage } from "react-intl";
 
-import { I18NProvider } from "./I18NProvider";
+import { I18NProvider } from "./index";
 
 describe("i18n", () => {
   interface RootCtxProps {

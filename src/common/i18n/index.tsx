@@ -1,5 +1,5 @@
 /*
- * I18NProvider.tsx
+ * index.tsx
  * Component to wrap react-intl initialization.
  * The way react-intl initialize I18N is quite different from i18next (react.i18next.com).
  * If we were to move to other lib than react-intl, it might be not that easy.

@@ -4,7 +4,7 @@
  * Author: Timotius Nugroho Chandra (timotius.n.chandra@gdplabs.id)
  * Created at: May 3rd 2019
  * -----
- * Last Modified: June 3rd 2019
+ * Last Modified: June 5th 2019
  * Modified By: Timotius Nugroho Chandra (timotius.n.chandra@gdplabs.id)
  * -----
  * Copyright (c) 2019 GLAIR. All rights reserved.
@@ -14,7 +14,7 @@ import * as React from "react";
 import * as ReactDOM from "react-dom";
 
 import { Root } from "./apps/Root/Root";
-import { ENV, initGlobalVar } from "./common/constants/envs";
+import { ENV, initGlobalVar } from "./common/constants/index";
 
 const { GRAPHQL_URL } = ENV;
 initGlobalVar();
