@@ -11,16 +11,19 @@
  * Author: Timotius Nugroho Chandra (timotius.n.chandra@gdplabs.id)
  * Created at: May 28th 2019
  * -----
- * Last Modified: June 5th 2019
+ * Last Modified: June 6th 2019
  * Modified By: Timotius Nugroho Chandra (timotius.n.chandra@gdplabs.id)
  * -----
  * Copyright (c) 2019 GLAIR. All rights reserved.
  */
 
 import { I18NProvider } from "@common/i18n";
+import { gql } from "apollo-boost";
 import * as React from "react";
+import { ApolloProvider } from "react-apollo";
 import { Route, Router, Switch } from "react-router";
 
+import { RootApolloClient } from "./apollo/index";
 import { Main } from "./components/Main";
 import { TestRouteProps } from "./components/TestRoute";
 import { TestRoute2Props } from "./components/TestRoute2";
@@ -66,18 +69,30 @@ export const Root = (props: any) => {
   const [locale, setLocale] = React.useState("en");
   const [theme] = React.useState("light");
 
+  RootApolloClient.query({
+    query: gql`
+      {
+        rates(currency: "USD") {
+          currency
+        }
+      }
+    `
+  }).then(result => console.log(result));
+
   return (
     <RootCtx.Provider value={{ locale, theme, setLocale }}>
       <I18NProvider locale={locale}>
-        <Router history={createBrowserHistory}>
-          <Switch>
-            <Route exact={true} path="/" component={Main} />
-            <Route exact={true} path="/import" component={LoadableImport} />
-            <Route exact={true} path="/importo" component={LoadableImport2} />
-            <Route exact={true} path="/reject" component={LoadableReject} />
-            <Route exact={true} path="/direct" component={LoadableDirect} />
-          </Switch>
-        </Router>
+        <ApolloProvider client={RootApolloClient}>
+          <Router history={createBrowserHistory}>
+            <Switch>
+              <Route exact={true} path="/" component={Main} />
+              <Route exact={true} path="/import" component={LoadableImport} />
+              <Route exact={true} path="/importo" component={LoadableImport2} />
+              <Route exact={true} path="/reject" component={LoadableReject} />
+              <Route exact={true} path="/direct" component={LoadableDirect} />
+            </Switch>
+          </Router>
+        </ApolloProvider>
       </I18NProvider>
     </RootCtx.Provider>
   );

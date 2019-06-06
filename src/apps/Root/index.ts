@@ -1,13 +1,12 @@
 /*
  * index.ts
- * A main program for Root app.
- * RootConfig is the implementation of GLConfig.
- * For example: the loadable function is implemented using GLReactSuspense.
+ * File to implement everything on "domain" folder
+ * e.g. GLLoadable is implemented using GLReactSuspense (from "common" folder)
  *
  * Author: Timotius Nugroho Chandra (timotius.n.chandra@gdplabs.id)
  * Created at: May 28th 2019
  * -----
- * Last Modified: June 1st 2019
+ * Last Modified: June 6th 2019
  * Modified By: Timotius Nugroho Chandra (timotius.n.chandra@gdplabs.id)
  * -----
  * Copyright (c) 2019 GLAIR. All rights reserved.
