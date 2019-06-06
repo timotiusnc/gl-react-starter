@@ -3,7 +3,11 @@ const common = require("./webpack.common");
 const Dotenv = require("dotenv-webpack");
 var webpack = require("webpack");
 
-module.exports = merge(common, {
+// smartStrategy is needed so we can replace certain webpack item. In this case: optimization.
+// optimization in webpack.common.js will be replaced with optimization in this webpack.prod.alt.js.
+module.exports = merge.smartStrategy({
+  optimization: "replace"
+})(common, {
   mode: "production",
 
   // "A separate source map is generated and no link from bundled code to

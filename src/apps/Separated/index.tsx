@@ -4,7 +4,7 @@
  * e.g. GLLoadable is implemented using GLReactSuspense (from "common" folder)
  *
  * Author: Timotius Nugroho Chandra (timotius.n.chandra@gdplabs.id)
- * Created at: May 28th 2019
+ * Created at: June 6th 2019
  * -----
  * Last Modified: June 6th 2019
  * Modified By: Timotius Nugroho Chandra (timotius.n.chandra@gdplabs.id)
