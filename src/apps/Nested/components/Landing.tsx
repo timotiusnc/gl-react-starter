@@ -3,10 +3,26 @@ import { FormattedMessage } from "react-intl";
 import { Link } from "react-router-dom";
 
 import { NestedCtx } from "../context/NestedCtx";
+import { multiply } from "../utils/utils";
 
 const Landing = () => {
+  const asu = () => {
+    // Tree-shaking test (multiply should be included because it's used, divide should not)
+    // See utils/utils.ts
+    console.log(multiply(1, 3));
+
+    // Dynamic import examples
+    import(/*webpackChunkName: "Utils" */ "../utils/kambing").then(module => module.kambing());
+
+    if (0 === 2 - 2) {
+      import(/*webpackChunkName: "Utils" */ "../utils/macan").then(module => module.macan());
+    }
+  };
+
   const nestedContext = React.useContext(NestedCtx);
   setTimeout(() => nestedContext.setLocale("id"), 1000); // Simulate dynamic translation changes
+
+  asu();
 
   return (
     <>
