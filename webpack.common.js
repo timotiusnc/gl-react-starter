@@ -18,6 +18,7 @@ module.exports = {
   // Options to specify how modules are resolved.
   resolve: {
     alias: {
+      // Must be in sync with tsconfig.json -> paths
       "@common": path.resolve(__dirname, "src/common"),
       "@domain": path.resolve(__dirname, "src/domain")
     },

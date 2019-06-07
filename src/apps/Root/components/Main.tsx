@@ -12,6 +12,7 @@ export const Main = (props: RouteComponentProps) => {
   const asu = () => {
     console.log("process.env.NODE_ENV", process.env.NODE_ENV);
     console.log("ENV.APP_ENV", ENV.APP_ENV);
+    console.log("ENV.APP_ENV", ENV.GRAPHQL_URL);
 
     // Tree-shaking test (multiply should be included because it's used, divide should not)
     // See utils/utils.ts

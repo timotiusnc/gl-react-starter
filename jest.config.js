@@ -10,7 +10,7 @@
  * Author: Timotius Nugroho Chandra (timotius.n.chandra@gdplabs.id)
  * Created at: May 23rd 2019
  * -----
- * Last Modified: June 3rd 2019
+ * Last Modified: June 7th 2019
  * Modified By: Timotius Nugroho Chandra (timotius.n.chandra@gdplabs.id)
  * -----
  * Copyright (c) 2019 GLAIR. All rights reserved.
@@ -32,5 +32,11 @@ module.exports = {
   // Kind of like webpack loader.
   transform: {
     "^.+\\.(ts|tsx)?$": "ts-jest"
+  },
+
+  // Custom module resolution. Must be in sync with tsconfig.json -> paths
+  moduleNameMapper: {
+    "@common/(.*)": "<rootDir>/src/common/$1",
+    "@domain/(.*)": "<rootDir>/src/domain/$1"
   }
 };
