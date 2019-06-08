@@ -59,7 +59,7 @@
    3. Prettier - Code formatter
 3. Run `./scripts/setup.sh`
 4. Run `npm start`. For subsequent development, just run this step. No need to do step 1-3 again.
-5. Nvaigate to `localhost:3000`
+5. Navigate to `localhost:3000`
 
 ---
 

@@ -19,7 +19,13 @@ const Main = (props: RouteComponentProps) => {
           currency
         }
       }
-    `
+    `,
+    context: {
+      headers: {
+        // We can change individual request's header this way (via context)
+        // "additional-this-request": "special additional header value in this request only"
+      }
+    }
   }).then(result => console.log(result));
 
   return (

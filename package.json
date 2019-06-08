@@ -42,6 +42,7 @@
   },
   "devDependencies": {
     "@testing-library/react": "8.0.1",
+    "@types/graphql": "^14.2.0",
     "@types/jest": "24.0.13",
     "@types/react": "16.8.17",
     "@types/react-dom": "16.8.4",
@@ -67,6 +68,7 @@
   },
   "devDependenciesComments": {
     "@testing-library/react": "So we can test React component the way we will use it in development",
+    "@types/graphql": "TypeScript typings for graphql",
     "@types/jest": "TypeScript typings for jest (test library)",
     "@types/react": "TypeScript typings for react",
     "@types/react-dom": "TypeScript typings for react-dom",

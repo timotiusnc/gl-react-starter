@@ -4,6 +4,7 @@
   "extends": ["tslint:recommended", "tslint-react", "tslint-config-prettier"],
   // Overridden rules
   "rules": {
+    "curly": [true, "ignore-same-line"],
     "interface-name": [
       // No need to prefix interface with capital I
       true,
