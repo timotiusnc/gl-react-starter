@@ -3,6 +3,7 @@ import * as React from "react";
 import { FormattedMessage } from "react-intl";
 import { Link } from "react-router-dom";
 
+import * as glimg from "../../../../public/images/gl.jpg";
 import { NestedCtx } from "../context/NestedCtx";
 import { multiply } from "../utils/utils";
 
@@ -35,7 +36,8 @@ const Landing = () => {
     <div className="landing__container">
       <Link to="/main">Main</Link>
       <div className="test">Landing</div>
-      <FormattedMessage id="hello" />
+      <FormattedMessage id="hello" /> <br />
+      <img src={glimg} alt="GL Logo" width="200" />
     </div>
   );
 };

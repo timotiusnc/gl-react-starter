@@ -15,6 +15,27 @@ module.exports = {
       {
         test: /\.(sass|scss|css)$/,
         use: [MiniCssExtractPlugin.loader, "css-loader", "sass-loader"]
+      },
+      {
+        test: /\.(png|svg|jpg|jpeg|gif)$/,
+        include: path.resolve(__dirname, "public"),
+        use: {
+          loader: "file-loader",
+          options: {
+            name: "[name].[contenthash].[ext]",
+            outputPath: "images"
+          }
+        }
+      },
+      {
+        test: /.(ttf|otf|eot|svg|woff)$/,
+        use: {
+          loader: "file-loader",
+          options: {
+            name: "[name].[contenthash].[ext]",
+            outputPath: "fonts/"
+          }
+        }
       }
     ]
   },

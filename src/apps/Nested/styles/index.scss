@@ -2,5 +2,6 @@
 
 html {
   @extend %utils;
-  background: turquoise;
+  background: url("../../../../public/images/ping.png") center no-repeat;
+  font-family: "Roboto", Arial, Helvetica, sans-serif;
 }
