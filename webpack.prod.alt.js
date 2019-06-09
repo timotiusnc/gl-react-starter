@@ -9,6 +9,7 @@ var webpack = require("webpack");
 module.exports = merge.smartStrategy({
   optimization: "replace"
 })(common, prod, {
+  // Source: https://hackernoon.com/the-100-correct-way-to-split-your-chunks-with-webpack-f8a9df5b7758
   optimization: {
     // Without `runtimeChunk`, the hash value(s) will be different even though there's no update.
     // This is because webpack includes certain boilerplate, specifically the runtime and manifest, in the entry chunk.
@@ -27,7 +28,22 @@ module.exports = merge.smartStrategy({
 
       // Minimum size, in bytes, for a chunk to be generated. If a vendor file is N KB and minSize is M (M < N), it will get merged with others.
       // maxInitialRequests Infinity and minSize 0: together will make all our vendor files outputted as is.
-      minSize: 0
+      minSize: 0,
+
+      // We need this for the vendor chunk naming so it will have nice names instead of numbers.
+      cacheGroups: {
+        vendor: {
+          test: /[\\/]node_modules[\\/]/,
+          name(module) {
+            // get the name. E.g. node_modules/packageName/not/this/part.js
+            // or node_modules/packageName
+            const packageName = module.context.match(/[\\/]node_modules[\\/](.*?)([\\/]|$)/)[1];
+
+            // npm package names are URL-safe, but some servers don't like @ symbols
+            return `npm.${packageName.replace("@", "")}`;
+          }
+        }
+      }
     }
   }
 });
