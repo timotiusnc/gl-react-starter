@@ -1,16 +1,20 @@
 const path = require("path");
 const CleanWebpackPlugin = require("clean-webpack-plugin");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
-var webpack = require("webpack");
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const webpack = require("webpack");
 
 module.exports = {
   entry: "./src/index.tsx",
   module: {
     rules: [
       {
-        test: /\.(ts|tsx)?$/,
-        use: "ts-loader",
-        include: path.resolve(__dirname, "src")
+        test: /\.(ts|tsx)$/,
+        use: "ts-loader"
+      },
+      {
+        test: /\.(sass|scss|css)$/,
+        use: [MiniCssExtractPlugin.loader, "css-loader", "sass-loader"]
       }
     ]
   },

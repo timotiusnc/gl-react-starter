@@ -1,7 +1,8 @@
 const merge = require("webpack-merge");
 const common = require("./webpack.common");
 const Dotenv = require("dotenv-webpack");
-var webpack = require("webpack");
+const webpack = require("webpack");
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
 module.exports = merge(common, {
   mode: "development",
@@ -26,6 +27,14 @@ module.exports = merge(common, {
       path: "./.env",
       safe: true,
       systemvars: true
+    }),
+
+    new MiniCssExtractPlugin({
+      // Still unknown: it's extracting all CSS into single files (except for CSS in dynamically imported module).
+      // Fortunately, that should be good for performance.
+      // From the docs,  extracting all CSS into single file requires another config:
+      // https://github.com/webpack-contrib/mini-css-extract-plugin#extracting-all-css-in-a-single-file
+      filename: "[name].css"
     }),
 
     // See webpack.prod.js to see why we need this

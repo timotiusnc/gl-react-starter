@@ -1,7 +1,8 @@
 const merge = require("webpack-merge");
 const common = require("./webpack.common");
 const Dotenv = require("dotenv-webpack");
-var webpack = require("webpack");
+const webpack = require("webpack");
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
 module.exports = merge(common, {
   mode: "production",
@@ -25,6 +26,14 @@ module.exports = merge(common, {
       systemvars: true
     }),
 
+    new MiniCssExtractPlugin({
+      // Still unknown: it's extracting all CSS into single files (except for CSS in dynamically imported module).
+      // Fortunately, that should be good for performance.
+      // From the docs,  extracting all CSS into single file requires another config:
+      // https://github.com/webpack-contrib/mini-css-extract-plugin#extracting-all-css-in-a-single-file
+      filename: "[name].[contenthash].css"
+    }),
+
     // So we will be able to type VERSION on dev console to get app version.
     // Why not merge it with dotenv-webpack? dotenv is for "external" constants, VERSION is "internal" constants.
     // In the future, this might need upgrade if we want to include commit hash in this VERSION string.
@@ -46,14 +55,7 @@ module.exports = merge(common, {
       // Indicates which chunks will be selected for optimization. Unless we have exception, we should provide `all`
       // because it means that chunks can be shared even between async and non-async chunks.
       // https://webpack.js.org/plugins/split-chunks-plugin/#splitchunkschunks
-      chunks: "all",
-
-      // Max number of parallel requests at an entry point. This will merge M vendors into maximum N vendor files (if M > N).
-      maxInitialRequests: Infinity,
-
-      // Minimum size, in bytes, for a chunk to be generated. If a vendor file is N KB and minSize is M (M < N), it will get merged with others.
-      // maxInitialRequests Infinity and minSize 0: together will make all our vendor files outputted as is.
-      minSize: 0
+      chunks: "all"
     }
   }
 });

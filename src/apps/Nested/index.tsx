@@ -6,7 +6,7 @@
  * Author: Timotius Nugroho Chandra (timotius.n.chandra@gdplabs.id)
  * Created at: June 6th 2019
  * -----
- * Last Modified: June 7th 2019
+ * Last Modified: June 9th 2019
  * Modified By: Timotius Nugroho Chandra (timotius.n.chandra@gdplabs.id)
  * -----
  * Copyright (c) 2019 GLAIR. All rights reserved.
@@ -20,6 +20,7 @@ import { Route, Router } from "react-router";
 
 import { NestedCtx } from "./context/NestedCtx";
 import history from "./helpers/browserHistory";
+import "./styles/index.scss";
 
 export const loadable: GLLoadable = (opts: GLLoadableOpts) => GLReactSuspense(opts);
 
@@ -27,8 +28,8 @@ const LandingLoadable = loadable({
   loader: () => import(/*webpackChunkName: "Landing" */ "./components/Landing")
 });
 
-const MainLoadable = loadable({
-  loader: () => import(/*webpackChunkName: "Main" */ "./components/Main")
+const PrimaryLoadable = loadable({
+  loader: () => import(/*webpackChunkName: "Primary" */ "./components/Primary")
 });
 
 export const Nested = () => {
@@ -40,7 +41,7 @@ export const Nested = () => {
       <I18NProvider locale={locale}>
         <Router history={history}>
           <Route exact={true} path="/" component={LandingLoadable} />
-          <Route path="/main" component={MainLoadable} />
+          <Route path="/main" component={PrimaryLoadable} />
         </Router>
       </I18NProvider>
     </NestedCtx.Provider>

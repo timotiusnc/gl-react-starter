@@ -1,0 +1,8 @@
+@import "../styles/utils";
+
+.landing__container {
+  @extend %utils;
+  .test {
+    background: yellow;
+  }
+}

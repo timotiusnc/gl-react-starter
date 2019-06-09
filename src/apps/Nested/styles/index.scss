@@ -1,0 +1,6 @@
+@import "./utils";
+
+html {
+  @extend %utils;
+  background: turquoise;
+}

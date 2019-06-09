@@ -6,6 +6,8 @@ import { Link } from "react-router-dom";
 import { NestedCtx } from "../context/NestedCtx";
 import { multiply } from "../utils/utils";
 
+import "./Landing.scss";
+
 const Landing = () => {
   const asu = () => {
     console.log("process.env.NODE_ENV", process.env.NODE_ENV);
@@ -30,11 +32,11 @@ const Landing = () => {
   asu();
 
   return (
-    <>
+    <div className="landing__container">
       <Link to="/main">Main</Link>
-      <div>Landing</div>
+      <div className="test">Landing</div>
       <FormattedMessage id="hello" />
-    </>
+    </div>
   );
 };
 

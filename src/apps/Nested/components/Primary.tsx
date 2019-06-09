@@ -7,9 +7,10 @@ import { Link, Route, RouteComponentProps } from "react-router-dom";
 import { NestedApolloClient } from "../apollo";
 
 import { One } from "./One";
+import "./Primary.scss";
 import { Two } from "./Two";
 
-const Main = (props: RouteComponentProps) => {
+const Primary = (props: RouteComponentProps) => {
   console.log("Main", props);
 
   NestedApolloClient.query({
@@ -30,15 +31,17 @@ const Main = (props: RouteComponentProps) => {
 
   return (
     <ApolloProvider client={NestedApolloClient}>
-      <Link to="/">Home</Link>
-      <Link to={`${props.match.url}/one`}>One</Link>
-      <Link to={`${props.match.url}/two`}>Two</Link>
-      <FormattedMessage id="hello" />
-      <div>Main</div>
-      <Route path={`${props.match.path}/one`} component={One} />
-      <Route path={`${props.match.path}/two`} component={Two} />
+      <div className="main__container">
+        <Link to="/">Home</Link>
+        <Link to={`${props.match.url}/one`}>One</Link>
+        <Link to={`${props.match.url}/two`}>Two</Link>
+        <FormattedMessage id="hello" />
+        <div className="test">Main</div>
+        <Route path={`${props.match.path}/one`} component={One} />
+        <Route path={`${props.match.path}/two`} component={Two} />
+      </div>
     </ApolloProvider>
   );
 };
 
-export default Main;
+export default Primary;

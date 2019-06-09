@@ -1,0 +1,8 @@
+@import "../styles/utils";
+
+.main__container {
+  @extend %utils;
+  .test {
+    background: red;
+  }
+}
