@@ -73,7 +73,7 @@
   },
   "devDependenciesComments": {
     "@testing-library/react": "So we can test React component the way we will use it in development",
-    "@types/graphql": "TypeScript typings for graphql",
+    "@types/graphql": "TypeScript typings for graphql so we have access to things like GraphQLError, GraphQLArgs, and graphql<...>.",
     "@types/jest": "TypeScript typings for jest (test library)",
     "@types/react": "TypeScript typings for react",
     "@types/react-dom": "TypeScript typings for react-dom",

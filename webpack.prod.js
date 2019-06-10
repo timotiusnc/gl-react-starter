@@ -4,6 +4,8 @@ const Dotenv = require("dotenv-webpack");
 const webpack = require("webpack");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
+// This config will produce production build using optimization strategy that will combine node_modules
+// into one bundle except if they are imported dynamically.
 module.exports = merge(common, {
   mode: "production",
 

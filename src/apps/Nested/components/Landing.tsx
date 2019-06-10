@@ -7,6 +7,7 @@ import * as glimg from "../../../../public/images/gl.jpg";
 import { NestedCtx } from "../context/NestedCtx";
 import { multiply } from "../utils/utils";
 
+import "./Landing.css";
 import "./Landing.scss";
 
 const Landing = () => {

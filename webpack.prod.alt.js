@@ -1,11 +1,10 @@
 const merge = require("webpack-merge");
 const common = require("./webpack.common");
 const prod = require("./webpack.prod");
-const Dotenv = require("dotenv-webpack");
-var webpack = require("webpack");
 
 // smartStrategy is needed so we can replace certain webpack item. In this case: optimization.
 // optimization in webpack.common.js will be replaced with optimization in this webpack.prod.alt.js.
+// This config will produce production build with each module spitted out.
 module.exports = merge.smartStrategy({
   optimization: "replace"
 })(common, prod, {

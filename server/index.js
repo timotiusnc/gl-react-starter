@@ -6,7 +6,7 @@
  * Author: Timotius Nugroho Chandra (timotius.n.chandra@gdplabs.id)
  * Created at: June 6th 2019
  * -----
- * Last Modified: June 6th 2019
+ * Last Modified: June 9th 2019
  * Modified By: Timotius Nugroho Chandra (timotius.n.chandra@gdplabs.id)
  * -----
  * Copyright (c) 2019 GLAIR. All rights reserved.
@@ -22,4 +22,4 @@ app.get("/*", function(req, res) {
   res.sendFile(path.join(__dirname, "../dist", "index.html"));
 });
 
-app.listen(9000);
+app.listen(9000, () => console.log("Server started on port 9000"));

@@ -4,6 +4,9 @@ const Dotenv = require("dotenv-webpack");
 const webpack = require("webpack");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
+// This config is used for development. It will watch for changes using webpack-dev-server
+// The scrip "buildDev" is for PoC purpose only. There should be no real use-case in which we need the output
+// outside webpack-dev-server.
 module.exports = merge(common, {
   mode: "development",
 

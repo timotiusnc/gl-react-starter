@@ -4,6 +4,7 @@ const HtmlWebpackPlugin = require("html-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const webpack = require("webpack");
 
+// Common webpack config for all build type (some parts might be overridden)
 module.exports = {
   entry: "./src/index.tsx",
   module: {
@@ -14,6 +15,7 @@ module.exports = {
       },
       {
         test: /\.(sass|scss|css)$/,
+        // Why not use style-loader for development build? To keep dev and prod code as similar as possible
         use: [MiniCssExtractPlugin.loader, "css-loader", "sass-loader"]
       },
       {
@@ -55,7 +57,8 @@ module.exports = {
     new CleanWebpackPlugin(), // See package.json to know why we need this.
     new HtmlWebpackPlugin({
       // See package.json to know why we need this.
-      template: "./public/index.html"
+      template: "./public/index.html",
+      favicon: "./public/favicon.ico"
     }),
 
     // We need `HashedModuleIdsPlugin` so hash in filename will stay the same if the content is the same.
