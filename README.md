@@ -22,7 +22,8 @@ Yet another React starter project.
 
 **src**
 
-- Business logic code
+- Contains business logic code.
+- Majority of file has header comments in it. Please read the header comments first before reading the source code.
 - Subfolders:
   - **`apps/`**
     - In a typical scenario, there will be only 1 subfolder inside `apps/`.
