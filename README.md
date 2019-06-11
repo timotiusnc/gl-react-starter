@@ -4,19 +4,19 @@ Yet another React starter project.
 
 Before you proceed further, we'd like to say:
 
-We hope you will gain knowledge just by reading the code and documentation without even using the starter itself.
+**We hope you will gain knowledge just by reading the code and documentation without even using the starter itself**.
 
 If you do use the starter, we hope:
 
-1.  You can kickstart your React project quickly.
-2.  You can keep the _reinvention of the wheel_ at a minimum by using standardized de-facto libraries.
-3.  To still be flexible enough for customization (in case our standardized libraries do not suit you).
-4.  For anyone to be able to apply the knowledge in this repo into their existing project just by reading this repo.
+1.  You can kickstart your React project **quickly**.
+2.  You can keep the **_reinvention of the wheel_ at a minimum** by using standardized de-facto libraries.
+3.  To still be **flexible enough for customization** (in case our standardized libraries do not suit you).
+4.  For anyone to be able to **apply the knowledge in this repo into their existing project just by reading this repo**.
 
 To re-iterate:
 
 1. The ultimate goal for this starter project is not the **code**, but the **knowledge**.
-2. If you already have your own project structure, you should NOT try to change it to be like this project structure. Unless you have a strong reason to.
+2. If you already have your own project structure, you **should NOT** try to change it to be like this project structure. Unless you have a strong reason to.
 3. If you already have your own project and plan to incorporate something (e.g. i18n), hopefully you can do it **faster** just by reading this repo.
 4. We provide **no npm package to install**. Our main goal is the dissemination of **knowledge**, not the **code**.
 
