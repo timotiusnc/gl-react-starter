@@ -8,7 +8,7 @@ Before you proceed further, we'd like to say:
 
 If you do use the starter, we hope:
 
-1.  You can kickstart your React project **quickly**.
+1.  You can kickstart your React project **quickly** by leveraging [GitHub Repository Template](https://github.blog/2019-06-06-generate-new-repositories-with-repository-templates/).
 2.  You can keep the **_reinvention of the wheel_ at a minimum** by using standardized de-facto libraries.
 3.  To still be **flexible enough for customization** (in case our standardized libraries do not suit you).
 4.  For anyone to be able to **apply the knowledge in this repo into their existing project just by reading this repo**.
