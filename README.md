@@ -4,14 +4,14 @@ Yet another React starter project.
 
 Before you proceed further, we'd like to say:
 
-```
 We hope you will gain knowledge just by reading the code and documentation without even using the starter itself.
 
 If you do use the starter, we hope:
- 1. You can kickstart your React project quickly.
- 2. You can keep the *reinvention of the wheel* at a minimum by standardizing de-facto libraries.
- 3. To still be flexible enough for customization or for anyone to apply the knowledge for their existing project despite the standardization.
-```
+
+1.  You can kickstart your React project quickly.
+2.  You can keep the _reinvention of the wheel_ at a minimum by using standardized de-facto libraries.
+3.  To still be flexible enough for customization (in case our standardized libraries do not suit you).
+4.  For anyone to be able to apply the knowledge in this repo into their existing project just by reading this repo.
 
 To re-iterate:
 
@@ -60,7 +60,7 @@ To re-iterate:
     - **`Separated`**: Sample on multiple (and separated) `<Router>`.
   - **`common/`**
     - Contains codes shared to all "apps" in `apps/`.
-    - **`constants`**: Centralized constants (from `.env` or our arbitrary constanst).
+    - **`constants`**: Centralized constants (from `.env.defaults` or our arbitrary constants).
     - **`GLLoadable`**: Contains default implementation for `GLLoadable.ts` in `domain/`.
     - **`i18n`**: Contains default implementation for i18n. EN and ID strings translation file are provided.
   - **`domain/`**
@@ -74,10 +74,15 @@ To re-iterate:
     - Contains arbitrary declaration for the whole codebase.
     - Check the file to know why it's separated from `global.d.ts`.
 
+**.env.defaults**
+
+- Default values that will be used if you don't specify it yourself.
+- If you do specify your own `.env` file, check the webpack configuration (`webpack.dev.js` or `webpack.prod.js`), specifically on `path` option.
+- Update it as necessary.
+
 **.env.example**
 
-- You need to copy this file and rename it as necessary.
-- TODO: automate the copy mechanism into `scripts/setup.sh`.
+- Contains information on what values need to be present if you specify your own .env file.
 
 **.gitignore**
 
@@ -155,8 +160,25 @@ To re-iterate:
 
 This is a CSR-only, single page web application.
 
-1. To build, run `npm run build`
-2. TODO: continue
+1. To build the arficat, run `npm run build`.
+2. The artifact will be on folder `dist/`.
+3. To inject environment variables:
+   1. As this is a web application, it can't read values from environment variables on runtime.
+   2. We need to "inject" them into the built artifact by using **string replacement**.
+   3. The string(s) that need to be replaced are in `.env.defaults` file.
+   4. For example, the content of `.env.defaults`:
+   ```
+   GRAPHQL_URL=http://localhost:8080
+   DUMMY_KEY=dummy value
+   ```
+   5. You have environment where the values should be:
+   ```
+   GRAPHQL_URL=https://production.com:8080
+   DUMMY_KEY=production value
+   ```
+   6. What you need to replace:
+   - `GRAPHQL_URL:"http://localhost:8080"` with `GRAPHQL_URL:"https://production.com:8080"`
+   - `DUMMY_KEY:"dummy value"` with `DUMMY_KEY:"production value"`.
 
 ---
 

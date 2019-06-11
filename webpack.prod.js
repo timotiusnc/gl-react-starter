@@ -25,7 +25,8 @@ module.exports = merge(common, {
     new Dotenv({
       path: "./.env",
       safe: true,
-      systemvars: true
+      systemvars: true,
+      defaults: true
     }),
 
     new MiniCssExtractPlugin({
