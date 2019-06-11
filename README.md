@@ -4,7 +4,7 @@ Yet another React starter project.
 
 Before you proceed further, we'd like to say:
 
-**We hope you will gain knowledge just by reading the code and documentation without even using the starter itself**.
+**We hope you will gain knowledge just by reading the code and documentation even WITHOUT using the starter itself**.
 
 If you do use the starter, we hope:
 
