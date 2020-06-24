@@ -41,7 +41,7 @@
     "react-router-dom": "React de-facto library for routing (move between HTML pages)"
   },
   "devDependencies": {
-    "@testing-library/react": "8.0.1",
+    "@testing-library/react": "10.4.2",
     "@types/graphql": "^14.2.0",
     "@types/jest": "24.0.13",
     "@types/react": "16.8.17",
