@@ -62,7 +62,7 @@
     "sass-loader": "7.1.0",
     "ts-jest": "24.0.2",
     "ts-loader": "5.3.3",
-    "tslint": "5.16.0",
+    "tslint": "5.20.1",
     "tslint-config-prettier": "1.18.0",
     "tslint-react": "4.0.0",
     "typescript": "3.3.4000",
